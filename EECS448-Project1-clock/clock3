@@ -1,0 +1,187 @@
+
+<!DOCTYPE html> 
+<html> 
+<!--Button Styling taken from W3Schools tutorial-->
+<style> 
+.button { 
+  display: inline-block; 
+  border-radius: 4px; 
+  background-color: #f4511e; 
+  border: none; 
+  color: #FFFFFF; 
+  text-align: center; 
+  font-size: 28px; 
+  padding: 20px; 
+  width: 200px; 
+  transition: all 0.5s; 
+  cursor: pointer; 
+  margin: 5px; 
+} 
+ 
+.button span { 
+  cursor: pointer; 
+  display: inline-block; 
+  position: relative; 
+  transition: 0.5s; 
+} 
+ 
+.button span:after { 
+  content: '»'; 
+  position: absolute; 
+  opacity: 0; 
+  top: 0; 
+  right: -20px; 
+  transition: 0.5s; 
+} 
+ 
+.button:hover span { 
+  padding-right: 25px; 
+} 
+ 
+.button:hover span:after { 
+  opacity: 1; 
+  right: 0; 
+} 
+</style> 
+
+<body>  
+<h1>Clock Project</h1> 
+<p>Please input the time.</p> 
+
+<input id="hrs"> 
+<input id="min"> 
+<input id="sec"> 
+
+<button class="button" style="vertical-align:middle" onclick="clockBuild()"><span>Submit </span></button> 
+
+<p id="valid"></p> 
+
+<!--Clock Displayed to User-->
+
+<div id="clock">
+<span id="hClock"></span>:<span id="mClock"></span>:<span id="sClock"></span>
+</div>  
+
+<script> 
+var i;
+
+ //Author: Luke Dercher
+function clockBuild() 
+{ 
+    var h,m,s,text; 
+
+    // Get the value of the input fields 
+    m = document.getElementById("min").value; 
+    s = document.getElementById("sec").value; 
+    h = document.getElementById("hrs").value;
+
+    //Convert the strings to int
+    h=parseInt(h);
+    m=parseInt(m);
+    s=parseInt(s);
+
+    //Im leaving the Valid Invalid checks as is, Luke handle the exceptions
+	
+    // If x is Not a Number or less than one or greater than 10 
+    if (isNaN(h) || h < 0 || h > 24||isNaN(m) || m < 0 || m > 60||isNaN(s) || s < 0 || s > 60)  
+    { 
+        text= "Input not valid"; 
+		
+		document.getElementById("hClock").innerHTML = "invalid";//Set User's time on Clock
+     	
+		document.getElementById("mClock").innerHTML = "invalid";
+		
+		document.getElementById("sClock").innerHTML = "invalid";
+		
+    }  
+    else if (h=="" || m=="" ||  s=="") 
+    { 
+        text= "Please fill in all of the boxes"; 
+		
+		document.getElementById("hClock").innerHTML = "invalid";//Set User's time on Clock
+     	
+		document.getElementById("mClock").innerHTML = "invalid";
+		
+		document.getElementById("sClock").innerHTML = "invalid";
+    } 
+    else 
+    { 
+        text = "Input valid"; 
+		
+		document.getElementById("hClock").innerHTML = h;//Set User's time on Clock
+     	
+		document.getElementById("mClock").innerHTML = m;
+		
+		document.getElementById("sClock").innerHTML = s;
+		
+		startClock();//Start the clock (Only Once when user Presses button everytime)
+	
+    } 
+     
+     	document.getElementById("valid").innerHTML = text; 
+} 
+ 
+
+// Author: Sri Gayatri
+function startClock()
+{
+
+	//Get Current time in the clock that is being Displayed to user 
+
+		m = document.getElementById("mClock").innerHTML; 
+    	s = document.getElementById("sClock").innerHTML; 
+    	h = document.getElementById("hClock").innerHTML;
+
+		h=parseInt(h);
+    	m=parseInt(m);
+    	s=parseInt(s);
+	
+//This function will run every 1 second. All it does is increment second variable and check if it affects mins and hours
+	if(s==59)
+	{	//If 59 sec
+		s=0;
+		if(m==59)
+		{	//If 59 sec and 59 mins
+			m=0;
+			if(h==23)
+			{	//If 59 sec, 59mins, and 23 hrs
+				h=0;
+			}
+			else
+			{
+				h=h+1;
+			}
+		}
+		else
+		{
+			m=m+1;
+		}
+	}
+	else
+	{
+		s=s+1;
+	}
+	m = checkTime(m);
+	s = checkTime(s);
+
+	//Set the new time on clock
+	document.getElementById("hClock").innerHTML = h;
+     document.getElementById("mClock").innerHTML = m;
+	document.getElementById("sClock").innerHTML = s;
+
+	//Clears the previous setTimeout and Calls the start Clock function every 1 second.
+	clearTimeout(i);
+    	i = setTimeout(function() { startClock(); }, 1000);
+}
+
+//Author: Sri
+function checkTime(i) 
+{
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+ 
+ 
+</script> 
+</body> 
+</html> 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title> README - Documentation </title>
+	<style type = "text/css">
+		p {
+			font-size: 16px;
+		}
+		#madeBy { color: blue; float: right;}
+		h2 { font-size: 35px; text-align: center;}
+	</style>
+</head>
+
+<body>
+	<h2>EECS 448 Project #1: Clock display.</h2> </br> </br>
+	<p> A project for EECS 448 - Software Engineering I at the University of Kansas. The
+	<a href="https://github.com/nptvuong2912/eecs448-clock">web-based clock</a> has the functions of setting up the time and changing between standard hour and military hour. </p> 
+	<p> 
+	Authors: <a href="https://github.com/LDercher"> Luke Dercher</a> , 
+	<a href="https://github.com/srigayatrisundar"> Sri Gayatri </a> ,
+	<a href="https://github.com/LukeWeber12"> Luke Weber </a> ,
+	<a href="https://github.com/nptvuong2912"> Vuong Nguyen. </a> </br> 
+	Last changed on: Feb 14, 2016. </br>
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+	
+	<p> Features of the application: </br>
+	- The users can set up the time to start with. </br> 
+	- The clock can change between standard hour (am/pm) and military/24 hour. </br>
+	- The clock can detects invalid inputs and flashes 12:00:00. 
+	</p> 
+	<p> Platform and languages: The clock display is written using HTML, CSS3 and JavaScript as a web application. </p>
+	</br>
+	</br>
+	<h3> Pre and post conditions of the code functions: </h3>
+	
+	<p>function init_blink(MaxHour, MinHour) </br>
+	-Precondition: Must have a valid MaxHour and MinHour to pass to startClock() to start the clock back up again when valid input is entered</br>
+	-Postcondition: Calls the blink method over and over again until correct input is given</br>
+	-Authors: Luke Dercher, Sri Gayatri, Luke Weber.
+	</p>
+	
+	<p>function blink(MaxHour, MinHour) </br>
+	-Precondition: Must have a valid MaxHour and MinHour to pass to startClock() to start the clock back up again when valid input is entered  </br>
+	-Purpose:changes the color of the 1200 text from black and white </br>
+	-Postcondition: exits the function when counter is set to stop</br>
+	-Authors: Luke Dercher, Sri Gayatri, Luke Weber.
+	</p>
+	
+	<p>function startClock(MaxHour, MinHour) </br> 
+	-Precondition: Must have a valid MaxHour and MinHour to decide whether to display 24 hr or 12 hr time</br>
+	-Purpose: starts the clock. Called recursively. Adds one second every time called and then increments minutes and hours</br>
+	-Postcondition: Must display inputted time and change to am or pm when nesseccary </br>
+	- Author: Sri Gayatri & Luke Weber.
+	</p>
+	
+	<p>function checkTime(i)  </br>
+	-Precondition: feeds in an int</br>
+	-Purpose: adds a zero in front of numbers when needed </br>
+	-Postcondition: </br>
+	-Author: Sri Gayatri.
+	</p>
+	
+	<p>function clockBuild() </br>
+	-Precondition: </br>
+	-Purpose: checks for good input </br>
+	-Postcondition: send that input to startClock() </br>
+	-Author: Luke Dercher, Sri, and Luke Weber.
+	</p>
+	
+	<p>function chngDisp() </br>
+	-Precondition: must read in value from 12hr or 24 hr drop box</br>
+	-Purpose: change display of what kind of input is acceptable</br>
+	-Postcondition: </br>
+	-Author: Luke Dercher and Luke Weber.
+	</p>
+	
+	<p>function InvalidEntry() </br>
+	-Precondition: NONE </br>
+	-Purpose: set the clock to 12:00:00 and flash when in an invalid entry occurs</br>
+	-Postcondition: Returns false always</br>
+	-Author: Luke Weber.
+	</p>
+	</br>
+	<p>Class Clock()</br>
+	-Precondition: none</br>
+	-Purpose: A static object to store all variables of a clock</br>
+	-Postcondition: Creates clock "object."</br>
+	-Authors: Luke Weber.
+	</p>
+	
+	<p><i>(All following functions are apart of the clock class)</i></p>
+	
+	<p>function getHours() </br>
+	-Precondition: none</br>
+	-Postcondition: returns the clock's hours.</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function setHours(aHours) </br>
+	-Precondition: A valid hour between the minimum and maximum accetable hours.</br>
+	-Purpose: set the hours on the clock to the proper inputed hour.</br>
+	-Postcondition: none</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function getMinutes() </br>
+	-Precondition: none</br>
+	-Postcondition: returns the clock's minutes.</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function setMinutes(aMinutes) </br>
+	-Precondition: A valid minute between the minimum and maximum accetable minute.</br>
+	-Purpose: set the hours on the clock to the proper inputted minute.</br>
+	-Postcondition: none</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function getHours() </br>
+	-Precondition: none</br>
+	-Postcondition: returns the clock's seconds.</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function setSeconds(aSeconds) </br>
+	-Precondition: A valid time for seconds between the minimum and maximum accetable seconds.</br>
+	-Purpose: set the seconds on the clock to the proper inputted seconds.</br>
+	-Postcondition: none</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function getMilitaryTime() </br>
+	-Precondition: none</br>
+	-Postcondition: Returns true if the clock is in military time otherwise false.</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function getAM_PM() </br>
+	-Precondition: none</br>
+	-Postcondition: Returns the clocks time of day. e.g. "am"</br>
+	-notes: Returns empty string if time is in military time.</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function setAM_PM(AM_PM) </br>
+	-Precondition: A string that would represent the time of day in a 12 hour clock. e.g. "am"</br>
+	-Purpose: set the AM_PM on the clock to the proper inputted  am.</br>
+	-Postcondition: none</br>
+	-Author: Luke Weber.
+	</p>
+	
+	<p>function changeAM_PM() </br>
+	-Precondition: none.</br>
+	-Purpose: Change the time of day i.e. 'am' to the next time of day i.e. 'pm'.</br>
+	-Postcondition: none</br>
+	-Author: Luke Weber.
+	</p>
+	</br>
+	<h3> Work cited list: </br> </h3>
+	<p> CSS3 and JavaScript references from <a href="http://www.w3schools.com/">w3schools.com</a>. All variable names where changed and functions where used for our own purposes.</p>
+	<p id="madeBy">Documentation made by Vuong Nguyen; contributed by Luke Dercher and LukeWeber.<p>
+</body> 
+</html>

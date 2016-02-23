@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<body>
+
+<h1>JavaScript ClockBuild</h1>
+
+<p>Please input a number between 1 and 12:</p>
+
+<input id="hrs">
+<input id="min">
+<input id="sec">
+<button class="button" style="vertical-align:middle" onclick="clockBuild()"><span>Submit </span></button>
+
+<p id="valid"></p>
+<p id="time"></p>
+<div id="debug"></div>
+
+<script>
+function clockBuild() {
+    var h,m,s, text;
+
+    // Get the value of the input fields
+    h = document.getElementById("hrs").value;
+    m = document.getElementById("min").value;
+    s = document.getElementById("sec").value;
+
+    // If x is Not a Number or less than one or greater than 10
+    if (isNaN(h) || h < 0 || h > 12||isNaN(m) || m < 0 || m > 12||isNaN(s) || s < 0 || s > 12) 
+    {
+        alert( "Input not valid");
+    } else {
+        text = "Input valid";
+    }
+ 
+ document.getElementById("valid").innerHTML = text;
+   document.getElementById("time").innerHTML = h +":" + m + ":" + z;
+}
+</script>
+
+</body>
+</html> 

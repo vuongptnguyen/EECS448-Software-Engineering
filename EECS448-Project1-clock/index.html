@@ -1,0 +1,76 @@
+
+<!-- EECS 448 Class project : Clock Display on a Web application.
+** Author: Vuong Nguyen.
+** Contributor: Luke Weber
+** Laste update: Feb 05, 2016.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		
+		<title>My digital Clock</title>
+		
+		<link rel="stylesheet" type="text/css" href="clock.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="header">
+			
+				<div id="leftBlock">
+					<div id="clockMode">
+						<div id="selectClock">
+							<select id="Hour clock" onchange="chngDisp()">
+								<option value="12"> 12-hour clock</option>
+								<option value="23"> 24-hour clock</option>
+							</select>	
+						</div>
+					</div>
+					
+				
+				</div>
+				
+				<div id="rightBlock"> 
+					<div id="setTime">
+						<h2> Select the clock hour and set your time </h2>
+						<p id="whatNums"></p>
+
+							<input id="InputHours"> : 
+							<input id="InputMinutes"> : 
+							<input id="InputSeconds"> 
+							<select id="amORpm">
+								<option value="am">am</option>
+								<option value="pm">pm</option>
+							</select>	
+							
+							<button class="button" onclick="clockBuild()">Click to run! </button>
+							
+							
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="main">
+				
+					<p id="valid"></p> 
+				<div id="clock">
+					<span id="hClock"> </span>
+					<span id ="colon"> </span>
+					<span id="mClock"> </span>
+					<span id ="colon2"> </span>
+					<span id="sClock"> </span>
+					<span id="am_pm"> </span>
+				</div> 
+			</div>
+		</div>
+		
+		<script type="text/javascript" src= "clock.js"> </script>	
+		
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<body>
+
+<h1>JavaScript Can Validate Input</h1>
+<select id="item1" name="Item 1">
+      <option></option>
+      <option value="1">12 hour clock</option>
+      <option value="2">24 hour clock</option>
+    </select>
+<button onclick="myFunction()">Go!</button>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<div id="debug"></div>
+
+<SCRIPT language = javascript>
+
+function myFunction() {
+var s = document.getElementById('item1');
+var item1 = s.options[s.selectedIndex].value;
+if(document.getElementById('item1').value == "1"){
+
+
+
+<input id="hrs">
+<input id="min">
+<input id="sec">
+<button class="button" style="vertical-align:middle" onclick="myFunction()"><span>Submit </span></button>
+
+
+    var x,y,z, text;
+
+    // Get the value of the input fields
+    x = document.getElementById("hrs").value;
+    y = document.getElementById("min").value;
+   z = document.getElementById("sec").value;
+
+    // If x is Not a Number or less than one or greater than 10
+    if (isNaN(x) || x < 0 || x > 12||isNaN(y) || y < 0 || y > 12||isNaN(z) || z < 0 || z > 12) 
+    {
+        alert( "Input not valid");
+    } else {
+        text = "Input valid";
+    }
+ 
+ document.getElementById("demo").innerHTML = text;
+   document.getElementById("demo1").innerHTML = "x = "+x +", y=" + y + ", z=" + z;
+}
+}
+</SCRIPT>
+
+</body>
+</html> 

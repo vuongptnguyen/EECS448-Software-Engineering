@@ -1,0 +1,133 @@
+ 
+ 
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html> 
+<html> 
+<style> 
+.button { 
+  display: inline-block; 
+  border-radius: 4px; 
+  background-color: #f4511e; 
+  border: none; 
+  color: #FFFFFF; 
+  text-align: center; 
+  font-size: 28px; 
+  padding: 20px; 
+  width: 200px; 
+  transition: all 0.5s; 
+  cursor: pointer; 
+  margin: 5px; 
+} 
+ 
+.button span { 
+  cursor: pointer; 
+  display: inline-block; 
+  position: relative; 
+  transition: 0.5s; 
+} 
+ 
+.button span:after { 
+  content: '»'; 
+  position: absolute; 
+  opacity: 0; 
+  top: 0; 
+  right: -20px; 
+  transition: 0.5s; 
+} 
+ 
+.button:hover span { 
+  padding-right: 25px; 
+} 
+ 
+.button:hover span:after { 
+  opacity: 1; 
+  right: 0; 
+} 
+</style> 
+<body> 
+ 
+<h1>clock<h1> 
+ 
+<p>Please input the time.</p> 
+<input id="hrs"> 
+<input id="min"> 
+<input id="sec"> 
+<button class="button" style="vertical-align:middle" onclick="clockBuild()"><span>Submit </span></button> 
+ 
+ 
+<p id="valid"></p> 
+<p id="time"></p> 
+<div id="debug"></div> 
+ 
+<script> 
+
+
+
+
+
+function clockBuild() { 
+    var h,m,s, text; 
+ 
+    // Get the value of the input fields 
+    h = document.getElementById("hrs").value; 
+    m = document.getElementById("min").value; 
+   s = document.getElementById("sec").value; 
+     
+     
+    h = parseInt(h); 
+     
+    m = parseInt(m); 
+     
+    s = parseInt(s); 
+  
+     document.getElementById("valid").innerHTML = text; 
+ 
+    var today = new Date(); 
+         
+    var h_Actual = today.getHours(); 
+ 
+    var m_Actual = today.getMinutes(); 
+ 
+    var s_Actual = today.getSeconds(); 
+ 
+    var diff_hrs = h_Actual - h; 
+ 
+    var diff_min = m_Actual - m; 
+ 
+    var diff_sec = s_Actual - s;  
+ 
+    var h_set = h_Actual - diff_hrs; 
+ 
+    var m_set = m_Actual - diff_min; 
+ 
+    var s_set = s_Actual - diff_sec; 
+ 
+    h_set = checkTime(h_set); 
+ 
+    m_set = checkTime(m_set); 
+ 
+    s_set = checkTime(s_set); 
+ 
+    document.getElementById("time").innerHTML = h_set +":" + m_set + ":" + s_set; 
+ 
+     setTimeout(clockBuild,500); 
+} 
+ 
+function checkTime(i)  
+{ 
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10 
+    return i; 
+} 
+ 
+</script> 
+ 
+</body> 
+</html> 

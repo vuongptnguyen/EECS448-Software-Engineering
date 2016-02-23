@@ -1,0 +1,78 @@
+/*Author: Vuong Nguyen.
+** Last changed: Feb 14, 2016.
+*/
+.container {
+	margin: 0; padding: 0; 
+	position: relative; font-family:Arial, Helvetica, sans-serif;
+}	
+
+ .header {
+	height: 270px; background-color: #B4AEFD;
+ }
+ 
+ #leftBlock {
+	background-color: none;
+	height: 100px; width: 24%; float: left;
+ }
+ #rightBlock {
+	background-color: none;
+	height: 100px; width: 70%; float: right;
+ }
+ .main {
+	background-color: #DAE3FA;
+	border-radius: 100px; border: 10px dashed #e6f7ff;
+	height: 400px; width: 850px; margin: auto;
+}
+ /** left sided clock mode **/
+ #clockMode {
+	background-color: transparent;
+	height: 70%; width: 70%; margin: 50px 0 0 50px;
+	position: relative; padding: 10px; 
+ }
+ select {
+	background-color: #EFEEFE;
+	width: 230px; height: 100%; 
+	font-size: 25px; text-align: center;
+	margin: 30px 0 0 20px; padding: 5px 0 5px 5px; border-radius: 10px;
+ }
+ .button {
+	 background-color: #000099; color: white; font-size: 20px; text-align: center; 
+	 margin: 5px 0 0 30px; border-radius: 10px; padding: 6px;
+	 animation-name: button;
+    animation-duration: 20s;
+ }
+ @keyframes button {
+    0%   {background-color: #00004d;}
+    25%  {background-color: #00b300;}
+    50%  {background-color: #cc0000;}
+    100% {background-color: #990099;}
+}
+ /** right-sided setTime div **/
+ #setTime {
+	padding: 20px 30px 20px 50px;
+	font-size: 25px; margin: 24px 0 0 0;
+ }
+ #InputHours{
+	padding: 5px; font-size: 20px; text-align: center;
+ }
+ #InputMinutes{
+	padding: 5px; font-size: 20px; text-align: center;
+ }
+ #InputSeconds {
+	padding: 5px; font-size: 20px; text-align: center;
+ }
+#amORpm {
+	background-color: #EFEEFE; border-radius: 10px;
+	width: 100px; height: 50px; 
+	font-size: 20px; text-align: center;
+	margin: 0 0 0 20px; 
+}
+
+#valid {
+	color: #040C62; font-size: 60px; text-align: center;
+}
+#clock {
+	color: black; 
+	font-size: 100px; text-align: center; 
+}		 
+
