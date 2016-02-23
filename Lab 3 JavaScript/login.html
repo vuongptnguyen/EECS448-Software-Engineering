@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+	
+		<title> Sign up!! </title>
+		
+          
+		<style type="text/css">
+		
+		.header {
+                    background-color: gray; height: 300px; width: 100%;
+		
+		}
+            
+		</style>
+		
+                <script type="text/javascript" > 
+                    
+                    function validate() { 
+                    
+                        var pass1 = document.getElementById('password').value;
+                        var pass2 = document.getElementById('password2').value; 
+                        
+                        if (pass1 === "" || pass2 === "") {
+                            alert("Enter the password.");
+                        } else if (pass1 != pass2 ) {
+                            alert ("Not matching.");
+                        } else {
+                            alert ("Confirm!");
+                        } 
+                    }
+
+                </script>
+	</head>
+
+	<body>
+            <div class ="header">
+                <div id = "login">
+                
+                    <h2> Entering your password: </h2>
+                    
+                    <form>
+                        Password: <br>
+                        <input type="text" id="password"> <br>
+                        Enter your password again: <br>
+                        <input type="text" id="password2"> <br>
+                        
+                    </form>
+                    
+                    
+                    <button onclick="validate()"> Validate </button>
+                    
+                </div>
+            
+            </div>   
+            
+            <div class="body">
+            </div>
+		
+	</body>
+
+</html> 
