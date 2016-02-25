@@ -1,0 +1,8 @@
+body {
+	color: #0033cc; font-family: "Times New Roman", Times, serif;
+}
+
+#text {
+	background-color: none; 
+	border: 1px solid black; padding: 3px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Manipulation with JavaScript</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="css/cssManipulation.css">
+	<style> </style>
+   
+	
+  </head>
+  <body>
+	<div id="container">
+		<h2> Manipulate the background color and border of the paragraph based on values of red, green and blue. </h2>
+		<br>
+		
+		<div> 
+		
+		<p id="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam lacus, efficitur id nisl sed, varius interdum quam. 
+		Cras ornare purus sit amet pellentesque pharetra. Donec eget neque lacus. Integer commodo laoreet rutrum. Vestibulum ante ipsum primis 
+		in faucibus orci luctus et ultrices posuere cubilia Curae; Donec semper sem ut lectus euismod consequat. Suspendisse velit enim, egestas 
+		eu tortor ut, rhoncus venenatis nulla. Duis est libero, tempus sit amet volutpat ut, pharetra malesuada enim. Etiam auctor orci urna, id 
+		luctus orci consequat at. Nulla ex nisi, sollicitudin sed malesuada in, auctor eu metus. Proin purus ipsum, pellentesque nec velit nec, congue faucibus orci. In ultricies erat id nisi imperdiet, vitae fermentum risus dictum
+		. Ut leo ex, hendrerit a scelerisque eget, rutrum in sem. Donec felis enim, sodales eget pharetra sed, efficitur in tortor.	</p>
+		<br>
+		</div>
+		
+
+			<h4> Enter numbers between 0 and 255 for color values: </h4>
+			<form>
+				 Red value: <input type="text" id="redBorder">  <br>
+				 Green value: <input type="text" id="greenBorder">  <br>
+				 Blue value: <input type="text" id="blueBorder">  <br>
+				 Width: <input type="text" id="widthBorder">  <br>	 
+				<br>
+				
+			<h4> Enter numbers from 0 to 255 for background color values:	</h4>
+				Red background value: <input type="text" id="redBackground"> <br>
+				Green background value: <input type="text" id="greenBackground"> <br>
+				Blue background value: <input type="text" id="blueBackground"> <br>
+			</form>	
+		
+		<br>
+		<button onclick="styleChange()"> Submit to change the style </button>
+	</div>
+	
+	<script type="text/javascript" src="js/cssManipulation.js"> </script>
+	
+  </body>
+</html>
