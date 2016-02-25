@@ -6,13 +6,13 @@ function styleChange() {
 	var b_border = document.getElementById("blueBorder").value;
 	
 	var w_border = document.getElementById("widthBorder").value;
-	var color_border = rgb(r_border, g_border, b_border);
+	//var color_border = rgb(r_border, g_border, b_border);
 	
 	var r_background = document.getElementById("redBackground").value;
 	var g_background = document.getElementById("greenBackground").value;
 	var b_background = document.getElementById("blueBackground").value;
 	
-	var color_background = rgb(r_background, g_background, b_background);
+	//var color_background = rgb(r_background, g_background, b_background);
 	
 	var p = document.getElementById("text");
 	
