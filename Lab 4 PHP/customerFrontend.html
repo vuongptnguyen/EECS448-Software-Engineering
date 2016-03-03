@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title> Vuong's Quick Shop </title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="style.css">
+		<script src="formChecker.js"></script>
+		
+	</head>
+
+	<body>
+		<div id="container">
+		
+			<h3> Welcome to my online Shop! </h3> <br> <br>	
+			
+		<form class="shopForm" action ="customerBackend.php" method="post" onsubmit="return validate()">
+		
+			<div id="signInDiv">
+					<p>Please sign in using your email: <span id="email_warning"></span><p>
+					<input type="text" id="username" value=""> <br>
+					<p> Enter your password: <span id="pass_warning"></span></p>
+					<input type="text" id="password" value=""> <br>
+					
+			</div>
+	
+				<div id="itemDiv">
+				
+					<div class="item">
+						<h3> New Men's Casual Shoes</h3>
+						<img class ="itemImage" src="https://s-media-cache-ak0.pinimg.com/236x/9f/6e/e9/9f6ee9e6043d94c7c14eadd14f90d3eb.jpg" height="250" width="300">
+						<p> Quantity: <input type="number" id="item1" name="item1" value="0" min="0" max="20"> </p>
+					
+					</div>
+				
+					<div class="item">
+						<h3> Men's V-neck Casual Cardigan Sweater</h3>
+						<img class ="itemImage" src="http://g02.a.alicdn.com/kf/HTB1lDQ4HVXXXXbVXpXXq6xXFXXXO/2014-New-Korean-Fashion-Mens-font-b-Shawl-b-font-font-b-Collar-b-font-font.jpg" height="250" width="300">
+						<p> Quantity: <input type="number" id="item2" name="item2" value="0" min="0" max="20"> </p>
+					
+					</div>
+					
+					<div class="item">
+						<h3> Men's Harem pants </h3>
+						<img class ="itemImage" src="http://g03.a.alicdn.com/kf/HTB14QsTKpXXXXXDXpXXq6xXFXXXb/2015-marca-moda-de-nueva-marca-pantalones-deportivos-pantalones-hombres-Harem-pantalones-pantalones-deportivos-hombres-grandes.jpg" height="250" width="300">
+						<p> Quantity: <input type="number" id="item3" name="item3" value="0" min="0" max="20"> </p>
+					
+					</div>
+					
+				</div>
+			
+				<div id="shippingDiv">
+					<h4> Choose a shopping method: </h4>
+					<input type="radio" name="shipOption" id="shipOption0" value="0"> 7 day: Free <br>
+					<input type="radio" name="shipOption" id="shipOption1" value="1"> Overnight: $50.00 <br>
+					<input type="radio" name="shipOption" id="shipOption2" value="2"> 3 day: $5.00 <br> <br>
+				</div>
+				
+			<input type="submit" value ="Submit" > 
+			<input type="button" onclick="reset()" value ="Reset">  
+				
+		</form>
+		</div>
+		
+		<script src="formChecker.js"></script>
+	</body>
+
+</html>
